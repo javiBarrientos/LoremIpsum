@@ -11,4 +11,11 @@ public class ContadorCantidadTest {
 
         assertEquals(49, cantidad.ContarFrases());
     }
+
+    @Test
+    public void contarPalabrasTest() {
+        ContarCantidad cantidad = new ContarCantidad();
+
+        assertEquals(414, cantidad.ContarPalabras());
+    }
 }

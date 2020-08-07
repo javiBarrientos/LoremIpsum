@@ -23,4 +23,9 @@ public class ContarCantidad {
         return frase.length;
     }
 
+    int ContarPalabras() {
+        String[] palabras = getLoremIpsum().split("\\s+");
+        return palabras.length;
+    }
+
 }
