@@ -18,4 +18,9 @@ public class ContarCantidad {
         return loremIpsum;
     }
 
+    int ContarFrases() {
+        String[] frase = getLoremIpsum().split("[!?.:]+");
+        return frase.length;
+    }
+
 }
