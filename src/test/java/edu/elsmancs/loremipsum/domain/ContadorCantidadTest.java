@@ -7,15 +7,22 @@ public class ContadorCantidadTest {
 
     @Test
     public void contarFrasesTest() {
-        ContarCantidad cantidad = new ContarCantidad();
+        ContarCantidad frases = new ContarCantidad();
 
-        assertEquals(49, cantidad.ContarFrases());
+        assertEquals(49, frases.ContarFrases());
     }
 
     @Test
     public void contarPalabrasTest() {
-        ContarCantidad cantidad = new ContarCantidad();
+        ContarCantidad palabras = new ContarCantidad();
 
-        assertEquals(414, cantidad.ContarPalabras());
+        assertEquals(414, palabras.ContarPalabras());
+    }
+
+    @Test
+    public void ContarParrafos() {
+        ContarCantidad parrafo = new ContarCantidad();
+
+        assertEquals(5, parrafo.ContarParrafos());
     }
 }
