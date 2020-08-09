@@ -33,13 +33,23 @@ public class ContarCantidad {
         return parrafos.length;
     }
 
-    Boolean ContarPalindromos(String palabra) {
-        int longitudPalabra = palabra.length();
-        palabra = palabra.toLowerCase();
+    int contarPalindromos(String palabra) {
+        String palabraVacia = "";
+        int contador = 0;
+        for (int i = 0; i < palabra.length(); i++) {
+            char letra = palabra.charAt(i);
 
-        for (int letra=0; letra < longitudPalabra; letra++, longitudPalabra--)
-            if (palabra.charAt(letra) != palabra.charAt(longitudPalabra - 1))
-                return false;
-        return true;
+            if (letra != ' '){
+                palabraVacia = palabraVacia + letra;
+
+            } else {
+                String girarPalabra = new StringBuilder(palabraVacia).reverse().toString();
+                if (palabraVacia.equals(girarPalabra))
+                    contador++;
+                palabraVacia = "";
+            }
+        }
+
+        return contador;
     }
 }
