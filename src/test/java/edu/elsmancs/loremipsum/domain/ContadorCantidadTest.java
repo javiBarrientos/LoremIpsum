@@ -25,4 +25,12 @@ public class ContadorCantidadTest {
 
         assertEquals(5, parrafo.ContarParrafos());
     }
+
+    @Test
+    public void ContarPalindromos() {
+        ContarCantidad palindromo = new ContarCantidad();
+
+        assertEquals(9, palindromo.contarPalindromos(palindromo.getLoremIpsum()));
+    }
+
 }
