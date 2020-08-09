@@ -33,4 +33,13 @@ public class ContarCantidad {
         return parrafos.length;
     }
 
+    Boolean ContarPalindromos(String palabra) {
+        int longitudPalabra = palabra.length();
+        palabra = palabra.toLowerCase();
+
+        for (int letra=0; letra < longitudPalabra; letra++, longitudPalabra--)
+            if (palabra.charAt(letra) != palabra.charAt(longitudPalabra - 1))
+                return false;
+        return true;
+    }
 }
