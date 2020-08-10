@@ -30,7 +30,6 @@ public class ContadorCantidadTest {
     public void ContarPalindromos() {
         ContarCantidad palindromo = new ContarCantidad();
 
-        assertEquals(9, palindromo.contarPalindromos(palindromo.getLoremIpsum()));
+        assertEquals(10, palindromo.contarPalindromos(palindromo.getLoremIpsum()));
     }
-
 }
