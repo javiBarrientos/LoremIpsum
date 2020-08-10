@@ -32,4 +32,11 @@ public class ContadorCantidadTest {
 
         assertEquals(10, palindromo.contarPalindromos(palindromo.getLoremIpsum()));
     }
+
+    @Test
+    public void contarMasRepetidas() {
+        ContarCantidad coso = new ContarCantidad();
+
+        assertEquals(5, coso.palabrasMasRepetidas(coso.getLoremIpsum()));
+    }
 }
