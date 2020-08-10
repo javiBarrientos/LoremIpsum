@@ -1,5 +1,7 @@
 package edu.elsmancs.loremipsum.domain;
 
+import java.util.ArrayList;
+
 public class ContarCantidad {
     private final String loremIpsum = "Lorem. ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sem felis, ornare in lectus quis, tincidunt tincidunt sapien. Suspendisse potenti. Donec sagittis eu turpis a semper. Etiam mattis, sapien eu porttitor rutrum, ante neque lobortis nulla, ut dignissim orci elit vitae diam. Praesent accumsan diam in felis ornare, vitae sollicitudin tortor feugiat. Pellentesque vel porttitor tortor. Suspendisse in ipsum id sapien suscipit vulputate.\n" +
             "\n" +
@@ -37,6 +39,8 @@ public class ContarCantidad {
         String palabraVacia = "";
         int contadorPalindromos = 0;
 
+        ArrayList<String> listaPalindromos = new ArrayList<String>();
+
         for (int i = 0; i < palabra.length(); i++) {
             char palabraIncompleta = palabra.charAt(i);
 
@@ -48,6 +52,7 @@ public class ContarCantidad {
                 String girarPalabra = new StringBuilder(nuevaPalabra).reverse().toString();
 
                 if (nuevaPalabra.equals(girarPalabra)) {
+                    listaPalindromos.add(nuevaPalabra);
                     contadorPalindromos++;
                 }
                 nuevaPalabra = "";
