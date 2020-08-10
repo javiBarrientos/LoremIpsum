@@ -1,7 +1,7 @@
 package edu.elsmancs.loremipsum.domain;
 
 public class ContarCantidad {
-    private final String loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sem felis, ornare in lectus quis, tincidunt tincidunt sapien. Suspendisse potenti. Donec sagittis eu turpis a semper. Etiam mattis, sapien eu porttitor rutrum, ante neque lobortis nulla, ut dignissim orci elit vitae diam. Praesent accumsan diam in felis ornare, vitae sollicitudin tortor feugiat. Pellentesque vel porttitor tortor. Suspendisse in ipsum id sapien suscipit vulputate.\n" +
+    private final String loremIpsum = "Lorem. ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sem felis, ornare in lectus quis, tincidunt tincidunt sapien. Suspendisse potenti. Donec sagittis eu turpis a semper. Etiam mattis, sapien eu porttitor rutrum, ante neque lobortis nulla, ut dignissim orci elit vitae diam. Praesent accumsan diam in felis ornare, vitae sollicitudin tortor feugiat. Pellentesque vel porttitor tortor. Suspendisse in ipsum id sapien suscipit vulputate.\n" +
             "\n" +
             "Vestibulum dolor mi, viverra pellentesque commodo eget, ultrices ac felis. Quisque cursus placerat porta. Vestibulum lectus metus, vestibulum ut felis id, posuere luctus leo. Cras imperdiet ullamcorper sapien sit amet pellentesque. Ut vitae venenatis nunc. Vestibulum ac suscipit libero, a blandit purus. Sed tempor massa eu orci dignissim fringilla. Mauris ut tincidunt nisl. Aliquam erat volutpat. Donec vehicula et risus ac condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;\n" +
             "\n" +
@@ -35,21 +35,25 @@ public class ContarCantidad {
 
     int contarPalindromos(String palabra) {
         String palabraVacia = "";
-        int contador = 0;
-        for (int i = 0; i < palabra.length(); i++) {
-            char letra = palabra.charAt(i);
+        int contadorPalindromos = 0;
 
-            if (letra != ' '){
-                palabraVacia = palabraVacia + letra;
+        for (int i = 0; i < palabra.length(); i++) {
+            char palabraIncompleta = palabra.charAt(i);
+
+            if (palabraIncompleta != ' ') {
+                palabraVacia = palabraVacia + palabraIncompleta;
 
             } else {
-                String girarPalabra = new StringBuilder(palabraVacia).reverse().toString();
-                if (palabraVacia.equals(girarPalabra))
-                    contador++;
+                String nuevaPalabra = palabraVacia.replaceAll("[.,:;!?]", "");
+                String girarPalabra = new StringBuilder(nuevaPalabra).reverse().toString();
+
+                if (nuevaPalabra.equals(girarPalabra)) {
+                    contadorPalindromos++;
+                }
+                nuevaPalabra = "";
                 palabraVacia = "";
             }
         }
-
-        return contador;
+        return contadorPalindromos;
     }
 }
