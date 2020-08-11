@@ -95,7 +95,7 @@ public class ContarCantidad {
                 .stream()
                 .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
                 .limit(5)
-                .collect(toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2,
+                .collect(toMap(Map.Entry::getKey, Map.Entry::getValue, (key, value) -> value,
                                 LinkedHashMap::new));
 
         return mapaOrdenado;
