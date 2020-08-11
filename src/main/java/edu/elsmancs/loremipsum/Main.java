@@ -22,5 +22,8 @@ public class Main {
 
         System.out.println("###" + " Palabras mas repetidas " + "###");
         System.out.println(contar.palabrasMasRepetidas(contar.listarPalabras(contar.getLoremIpsum())) + "\n");
+
+        System.out.println("###" + " Tuplas mas repetidas " + "###");
+        System.out.println(contar.tuplasMasRepetidas(contar.listarPalabras(contar.getLoremIpsum())) + "\n");
     }
 }
