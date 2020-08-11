@@ -86,4 +86,26 @@ public class ContarCantidad {
 
         return mapaOrdenado;
     }
+
+    public static Map<String, Integer> tuplasMasRepetidas(ArrayList<String> lista) {
+        Map<String, Integer> tuplasRepetidas = new HashMap<String, Integer>();
+
+        String palabraClave = "";
+
+        for (String palabra : lista) {
+            for (String segundaPalabra : lista) {
+                palabraClave = palabra + " " + segundaPalabra;
+                tuplasRepetidas.put(palabraClave, Collections.frequency(lista, palabraClave));
+            }
+        }
+
+        LinkedHashMap tuplasOrdenadas = tuplasRepetidas.entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+                .limit(5)
+                .collect(toMap(Map.Entry::getKey, Map.Entry::getValue, (key, value) -> value,
+                        LinkedHashMap::new));
+
+        return tuplasOrdenadas;
+    }
 }
