@@ -60,8 +60,7 @@ public class ContarCantidad {
         return listaPalindromos;
     }
 
-    public static HashMap<String, Integer> palabrasMasRepetidas(String palabra) {
-        LinkedHashMap<String, Integer> palabrasRepetidas = new LinkedHashMap<String, Integer>();
+    public static ArrayList<String> listarPalabrasRepetidas(String palabra) {
         ArrayList<String> listaDePalabras = new ArrayList<String>();
         String palabraVacia = "";
 
@@ -71,26 +70,31 @@ public class ContarCantidad {
             char posicionLetra = minimizarPalabra.charAt(i);
 
             if (posicionLetra != ' ') {
-                palabraVacia = palabraVacia + posicionLetra;
+                palabraVacia += posicionLetra;
 
             } else {
                 String palabraLimpia = palabraVacia.replaceAll("[.,:;!?]", "");
                 listaDePalabras.add(palabraLimpia);
                 Collections.sort(listaDePalabras);
+                palabraVacia = "";
+            }
+        }
+        return listaDePalabras;
+    }
 
-                for (String palabraDeLaLista : listaDePalabras) {
+    public static HashMap<String, Integer> palabrasMasRepetidas(ArrayList<String> lista) {
+        LinkedHashMap<String, Integer> palabrasRepetidas = new LinkedHashMap<String, Integer>();
 
-                    if (palabrasRepetidas.containsKey(palabraDeLaLista)) {
-                        palabrasRepetidas.put(palabraDeLaLista, 1 + 1);
+        for (String palabraDeLaLista : lista) {
 
-                    } else {
-                        palabrasRepetidas.putIfAbsent(palabraDeLaLista, 1);
-                    }
-                    palabraVacia = "";
+            if (palabrasRepetidas.containsKey(palabraDeLaLista)) {
+                palabrasRepetidas.put(palabraDeLaLista, 1 + 1);
 
-                }
+            } else {
+                palabrasRepetidas.putIfAbsent(palabraDeLaLista, 1);
             }
         }
         return palabrasRepetidas;
     }
+
 }
