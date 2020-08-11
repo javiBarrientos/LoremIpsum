@@ -1,6 +1,6 @@
 package edu.elsmancs.loremipsum.domain;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class ContarCantidad {
     private final String loremIpsum = "Lorem. ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sem felis, ornare in lectus quis, tincidunt tincidunt sapien. Suspendisse potenti. Donec sagittis eu turpis a semper. Etiam mattis, sapien eu porttitor rutrum, ante neque lobortis nulla, ut dignissim orci elit vitae diam. Praesent accumsan diam in felis ornare, vitae sollicitudin tortor feugiat. Pellentesque vel porttitor tortor. Suspendisse in ipsum id sapien suscipit vulputate.\n" +
@@ -13,29 +13,29 @@ public class ContarCantidad {
             "\n" +
             "Aliquam pulvinar leo erat, non ultricies nibh molestie sed. Sed ornare, nulla sed auctor posuere, nisi massa condimentum urna, at venenatis nibh mi quis dolor. Donec volutpat nunc eu neque semper vulputate. Quisque ut eleifend nibh, et fringilla sapien. Nunc laoreet consectetur orci eu efficitur. Quisque ut lorem lacinia enim porttitor ultrices. Praesent egestas mauris vel turpis volutpat, in tincidunt purus euismod. Mauris a nulla gravida, auctor eros a, pharetra leo. Aenean suscipit enim pretium ante lacinia commodo.";
 
-    ContarCantidad() {
+    public ContarCantidad() {
     }
 
-    String getLoremIpsum() {
+    public String getLoremIpsum() {
         return loremIpsum;
     }
 
-    int ContarFrases() {
+    public int contarFrases() {
         String[] frase = getLoremIpsum().split("[!?.:]+");
         return frase.length;
     }
 
-    int ContarPalabras() {
+    public int contarPalabras() {
         String[] palabras = getLoremIpsum().split("\\s+");
         return palabras.length;
     }
 
-    int ContarParrafos() {
+    public int contarParrafos() {
         String[] parrafos = getLoremIpsum().split("\\n+");
         return parrafos.length;
     }
 
-    int contarPalindromos(String palabra) {
+    public int contarPalindromos(String palabra) {
         String palabraVacia = "";
         int contadorPalindromos = 0;
 
