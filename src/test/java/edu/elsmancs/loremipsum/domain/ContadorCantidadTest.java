@@ -9,34 +9,27 @@ public class ContadorCantidadTest {
     public void contarFrasesTest() {
         ContarCantidad frases = new ContarCantidad();
 
-        assertEquals(49, frases.ContarFrases());
+        assertEquals(49, frases.contarFrases());
     }
 
     @Test
     public void contarPalabrasTest() {
         ContarCantidad palabras = new ContarCantidad();
 
-        assertEquals(414, palabras.ContarPalabras());
+        assertEquals(414, palabras.contarPalabras());
     }
 
     @Test
-    public void ContarParrafos() {
+    public void contarParrafosTest() {
         ContarCantidad parrafo = new ContarCantidad();
 
-        assertEquals(5, parrafo.ContarParrafos());
+        assertEquals(5, parrafo.contarParrafos());
     }
 
     @Test
-    public void ContarPalindromos() {
+    public void contarPalindromosTest() {
         ContarCantidad palindromo = new ContarCantidad();
 
         assertEquals(10, palindromo.contarPalindromos(palindromo.getLoremIpsum()));
-    }
-
-    @Test
-    public void contarMasRepetidas() {
-        ContarCantidad coso = new ContarCantidad();
-
-        assertEquals(5, coso.palabrasMasRepetidas(coso.getLoremIpsum()));
     }
 }
