@@ -36,19 +36,6 @@ public class ContarCantidad {
         return parrafos.length;
     }
 
-    public static ArrayList<String> contarPalindromos(ArrayList<String> listaDePalabras) {
-        ArrayList<String> listaPalindromos = new ArrayList<String>();
-
-        for (String palabra : listaDePalabras) {
-            String palabraGirada = new StringBuilder(palabra).reverse().toString();
-
-            if (palabra.equals(palabraGirada) && palabraGirada.length() >= 3) {
-                listaPalindromos.add(palabraGirada);
-            }
-        }
-        return listaPalindromos;
-    }
-
     public static ArrayList<String> listarPalabras(String palabra) {
         ArrayList<String> listaDePalabras = new ArrayList<String>();
         String palabraVacia = "";
@@ -68,6 +55,19 @@ public class ContarCantidad {
             }
         }
         return listaDePalabras;
+    }
+
+    public static ArrayList<String> contarPalindromos(ArrayList<String> listaDePalabras) {
+        ArrayList<String> listaPalindromos = new ArrayList<String>();
+
+        for (String palabra : listaDePalabras) {
+            String palabraGirada = new StringBuilder(palabra).reverse().toString();
+
+            if (palabra.equals(palabraGirada) && palabraGirada.length() >= 3) {
+                listaPalindromos.add(palabraGirada);
+            }
+        }
+        return listaPalindromos;
     }
 
     public static Map<String, Integer> palabrasMasRepetidas(ArrayList<String> lista) {
