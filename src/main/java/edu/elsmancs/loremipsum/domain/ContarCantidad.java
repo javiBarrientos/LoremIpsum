@@ -49,7 +49,7 @@ public class ContarCantidad {
         return listaPalindromos;
     }
 
-    public static ArrayList<String> listarPalabrasRepetidas(String palabra) {
+    public static ArrayList<String> listarPalabras(String palabra) {
         ArrayList<String> listaDePalabras = new ArrayList<String>();
         String palabraVacia = "";
 
