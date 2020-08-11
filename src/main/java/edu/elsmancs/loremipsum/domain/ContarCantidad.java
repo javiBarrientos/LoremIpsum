@@ -37,7 +37,7 @@ public class ContarCantidad {
     }
 
     public static ArrayList<String> listarPalabras(String palabra) {
-        ArrayList<String> listaDePalabras = new ArrayList<String>();
+        ArrayList<String> listaPalabras = new ArrayList<String>();
         String palabraVacia = "";
 
         String minimizarPalabra = palabra.toLowerCase();
@@ -50,17 +50,17 @@ public class ContarCantidad {
 
             } else {
                 String palabraLimpia = palabraVacia.replaceAll("[.,:;!?]", "");
-                listaDePalabras.add(palabraLimpia);
+                listaPalabras.add(palabraLimpia);
                 palabraVacia = "";
             }
         }
-        return listaDePalabras;
+        return listaPalabras;
     }
 
-    public static ArrayList<String> contarPalindromos(ArrayList<String> listaDePalabras) {
+    public static ArrayList<String> contarPalindromos(ArrayList<String> lista) {
         ArrayList<String> listaPalindromos = new ArrayList<String>();
 
-        for (String palabra : listaDePalabras) {
+        for (String palabra : lista) {
             String palabraGirada = new StringBuilder(palabra).reverse().toString();
 
             if (palabra.equals(palabraGirada) && palabraGirada.length() >= 3) {
