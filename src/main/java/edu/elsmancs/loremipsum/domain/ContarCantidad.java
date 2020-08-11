@@ -1,21 +1,19 @@
 package edu.elsmancs.loremipsum.domain;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toMap;
 
 public class ContarCantidad {
-    private static final String loremIpsum = "Lorem. ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sem felis, ornare in lectus quis, tincidunt tincidunt sapien. Suspendisse potenti. Donec sagittis eu turpis a semper. Etiam mattis, sapien eu porttitor rutrum, ante neque lobortis nulla, ut dignissim orci elit vitae diam. Praesent accumsan diam in felis ornare, vitae sollicitudin tortor feugiat. Pellentesque vel porttitor tortor. Suspendisse in ipsum id sapien suscipit vulputate.\n" +
+    private static final String loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et faucibus mi. Aenean vestibulum arcu quis risus mattis iaculis. Aenean eu arcu at libero suscipit dictum in vel arcu. Aliquam eros turpis, fringilla in elementum aliquam, aliquam sed est. Donec eu orci eget quam eleifend scelerisque nec vel ex. Nam dapibus placerat orci in imperdiet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse tincidunt pellentesque magna eu consectetur. Etiam volutpat blandit orci vel varius. Curabitur quis mauris pulvinar lorem pulvinar ornare in vitae enim. Aenean fermentum, sem sed consequat finibus, diam massa finibus massa, at lacinia ipsum urna id mi. Nunc finibus congue ullamcorper. Cras dui augue, ultricies non magna nec, tempus facilisis purus. In fringilla congue risus, sed ultricies neque posuere a. Fusce sit amet porttitor orci, sed cursus leo.\n" +
             "\n" +
-            "Vestibulum dolor mi, viverra pellentesque commodo eget, ultrices ac felis. Quisque cursus placerat porta. Vestibulum lectus metus, vestibulum ut felis id, posuere luctus leo. Cras imperdiet ullamcorper sapien sit amet pellentesque. Ut vitae venenatis nunc. Vestibulum ac suscipit libero, a blandit purus. Sed tempor massa eu orci dignissim fringilla. Mauris ut tincidunt nisl. Aliquam erat volutpat. Donec vehicula et risus ac condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;\n" +
+            "Ut ac faucibus mi. Maecenas dolor nibh, mollis sit amet lacus id, hendrerit bibendum ante. Quisque imperdiet tincidunt pulvinar. Nullam sapien purus, tempor non semper et, suscipit eget metus. In non lacinia purus. Maecenas vel vulputate nisi. Morbi iaculis vitae est a aliquet. Suspendisse placerat congue neque non interdum. Nunc bibendum euismod suscipit.\n" +
             "\n" +
-            "Phasellus tristique dolor ac neque dignissim, vitae imperdiet ante ullamcorper. Suspendisse sollicitudin laoreet purus in vehicula. Proin hendrerit ut mauris et congue. In at hendrerit tortor, sit amet mattis nulla. Fusce orci felis, volutpat eget euismod ut, faucibus aliquam lectus. Integer accumsan tortor et commodo sollicitudin. Nullam a euismod tellus, vel cursus magna. Maecenas at mattis nibh.\n" +
+            "Cras tincidunt, nunc vel suscipit dictum, nunc nunc sollicitudin lacus, vitae ornare nulla lorem a nisl. Pellentesque ornare urna at ullamcorper consequat. Mauris fermentum ipsum ac lorem interdum sollicitudin. Praesent egestas odio est, eget sagittis augue lobortis non. Sed commodo eu risus non maximus. Morbi aliquam hendrerit justo, id consequat sapien efficitur id. Nunc imperdiet velit mi, quis vulputate nibh ultrices vel. Nunc in hendrerit metus. Praesent gravida nisl eget dignissim dapibus. Etiam eget neque magna. Pellentesque tincidunt mi in sapien volutpat, vel semper neque ornare. In finibus ornare mattis. Donec metus augue, vestibulum quis posuere vitae, laoreet ut ex.\n" +
             "\n" +
-            "Sed vestibulum ante eu elit blandit ullamcorper. Maecenas molestie lectus et rhoncus molestie. In porta id tortor quis efficitur. Fusce dictum, sem sit amet molestie convallis, neque diam sollicitudin arcu, non facilisis turpis nisl quis lorem. Curabitur turpis erat, dignissim at suscipit nec, laoreet et felis. Duis fringilla magna quis scelerisque elementum. Praesent imperdiet lorem at orci tempus, a condimentum arcu gravida. Ut rutrum mi augue, vel pretium ante euismod quis. Proin egestas, augue lacinia ornare auctor, nunc odio ornare nunc, a tristique eros nibh a nulla. Vestibulum pharetra nunc id tortor vestibulum, at sodales leo consequat. Quisque pretium felis eu elit porta mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam, elit sit amet laoreet sodales, mauris lacus vehicula augue, eleifend iaculis libero erat sit amet dui. Duis porta massa condimentum arcu finibus, sit amet auctor tortor consequat.\n" +
+            "Maecenas nulla leo, blandit ut quam sit amet, bibendum sodales eros. Fusce nisl mauris, aliquam id dolor nec, lacinia interdum erat. In id elit dignissim diam bibendum feugiat non ac lacus. Fusce a turpis eget ante malesuada semper. Aliquam non finibus lacus, ut pulvinar urna. Vivamus ac ultricies purus. Duis maximus quam id neque aliquam rhoncus. Vestibulum ligula mi, faucibus ut sapien feugiat, pharetra imperdiet nibh. Sed fermentum enim vitae est eleifend egestas. Etiam tempus mauris quis turpis placerat, in pulvinar quam consectetur. Ut laoreet neque ut ligula porta, ac gravida odio mollis. In dignissim turpis eu purus posuere, quis fringilla arcu lobortis.\n" +
             "\n" +
-            "Aliquam pulvinar leo erat, non ultricies nibh molestie sed. Sed ornare, nulla sed auctor posuere, nisi massa condimentum urna, at venenatis nibh mi quis dolor. Donec volutpat nunc eu neque semper vulputate. Quisque ut eleifend nibh, et fringilla sapien. Nunc laoreet consectetur orci eu efficitur. Quisque ut lorem lacinia enim porttitor ultrices. Praesent egestas mauris vel turpis volutpat, in tincidunt purus euismod. Mauris a nulla gravida, auctor eros a, pharetra leo. Aenean suscipit enim pretium ante lacinia commodo.";
-
+            "Donec vel laoreet eros. Nulla imperdiet ex ut nisl mattis, nec gravida leo fermentum. Fusce ut elementum metus, tincidunt consequat dui. Nullam suscipit magna nec libero bibendum laoreet. Vivamus congue auctor est ac bibendum. Proin condimentum ante eros, vitae tristique enim euismod quis. Ut quis augue quis sem rutrum tempor. Donec sollicitudin imperdiet bibendum. Donec nec felis justo.";
     public ContarCantidad() {
     }
 
@@ -24,7 +22,7 @@ public class ContarCantidad {
     }
 
     public static int contarFrases() {
-        String[] frase = getLoremIpsum().split("[!?.:]+");
+        String[] frase = getLoremIpsum().split("[!?.]+");
         return frase.length;
     }
 
@@ -38,26 +36,14 @@ public class ContarCantidad {
         return parrafos.length;
     }
 
-    public static ArrayList<String> contarPalindromos(String palabra) {
-        String palabraVacia = "";
-
+    public static ArrayList<String> contarPalindromos(ArrayList<String> listaDePalabras) {
         ArrayList<String> listaPalindromos = new ArrayList<String>();
 
-        for (int i = 0; i < palabra.length(); i++) {
-            char palabraIncompleta = palabra.charAt(i);
+        for (String palabra : listaDePalabras) {
+            String palabraGirada = new StringBuilder(palabra).reverse().toString();
 
-            if (palabraIncompleta != ' ') {
-                palabraVacia = palabraVacia + palabraIncompleta;
-
-            } else {
-                String nuevaPalabra = palabraVacia.replaceAll("[.,:;!?]", "");
-                String girarPalabra = new StringBuilder(nuevaPalabra).reverse().toString();
-
-                if (nuevaPalabra.equals(girarPalabra) && girarPalabra.length() >= 3) {
-                    listaPalindromos.add(nuevaPalabra);
-                }
-                nuevaPalabra = "";
-                palabraVacia = "";
+            if (palabra.equals(palabraGirada) && palabraGirada.length() >= 3) {
+                listaPalindromos.add(palabraGirada);
             }
         }
         return listaPalindromos;
