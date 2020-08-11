@@ -9,14 +9,14 @@ public class ContadorCantidadTest {
     public void contarFrasesTest() {
         ContarCantidad frases = new ContarCantidad();
 
-        assertEquals(49, frases.contarFrases());
+        assertEquals(59, frases.contarFrases());
     }
 
     @Test
     public void contarPalabrasTest() {
         ContarCantidad palabras = new ContarCantidad();
 
-        assertEquals(414, palabras.contarPalabras());
+        assertEquals(451, palabras.contarPalabras());
     }
 
     @Test
@@ -30,6 +30,6 @@ public class ContadorCantidadTest {
     public void contarPalindromosTest() {
         ContarCantidad palindromo = new ContarCantidad();
 
-        assertEquals(10, palindromo.contarPalindromos(palindromo.getLoremIpsum()));
+        assertEquals(8, palindromo.contarPalindromos(palindromo.listarPalabras(palindromo.getLoremIpsum())).size());
     }
 }
