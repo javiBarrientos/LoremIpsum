@@ -61,4 +61,29 @@ public class ContarCantidad {
         }
         return contadorPalindromos;
     }
+
+    public HashMap palabrasMasRepetidas(String palabra) {
+        HashMap<String, Integer> palabrasRepetidas = new HashMap<String, Integer>();
+        String palabraVacia = "";
+
+        String minimizarPalabra = palabra.toLowerCase();
+
+        for (int i = 0; i < minimizarPalabra.length(); i++) {
+            char posicionLetra = minimizarPalabra.charAt(i);
+
+            if (posicionLetra != ' ') {
+                palabraVacia = palabraVacia + posicionLetra;
+            } else {
+                String quitarSignoPuntuacion = palabraVacia.replaceAll("[.,:;!?]", "");
+                if (palabrasRepetidas.containsKey(quitarSignoPuntuacion)) {
+                    palabrasRepetidas.put(quitarSignoPuntuacion, 1 + 1);
+                } else {
+                    palabrasRepetidas.putIfAbsent(quitarSignoPuntuacion, 1);
+                }
+                palabraVacia = "";
+                quitarSignoPuntuacion = "";
+            }
+        }
+        return palabrasRepetidas;
+    }
 }
