@@ -3,7 +3,7 @@ package edu.elsmancs.loremipsum.domain;
 import java.util.*;
 
 public class ContarCantidad {
-    private final String loremIpsum = "Lorem. ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sem felis, ornare in lectus quis, tincidunt tincidunt sapien. Suspendisse potenti. Donec sagittis eu turpis a semper. Etiam mattis, sapien eu porttitor rutrum, ante neque lobortis nulla, ut dignissim orci elit vitae diam. Praesent accumsan diam in felis ornare, vitae sollicitudin tortor feugiat. Pellentesque vel porttitor tortor. Suspendisse in ipsum id sapien suscipit vulputate.\n" +
+    private static final String loremIpsum = "Lorem. ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sem felis, ornare in lectus quis, tincidunt tincidunt sapien. Suspendisse potenti. Donec sagittis eu turpis a semper. Etiam mattis, sapien eu porttitor rutrum, ante neque lobortis nulla, ut dignissim orci elit vitae diam. Praesent accumsan diam in felis ornare, vitae sollicitudin tortor feugiat. Pellentesque vel porttitor tortor. Suspendisse in ipsum id sapien suscipit vulputate.\n" +
             "\n" +
             "Vestibulum dolor mi, viverra pellentesque commodo eget, ultrices ac felis. Quisque cursus placerat porta. Vestibulum lectus metus, vestibulum ut felis id, posuere luctus leo. Cras imperdiet ullamcorper sapien sit amet pellentesque. Ut vitae venenatis nunc. Vestibulum ac suscipit libero, a blandit purus. Sed tempor massa eu orci dignissim fringilla. Mauris ut tincidunt nisl. Aliquam erat volutpat. Donec vehicula et risus ac condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;\n" +
             "\n" +
@@ -16,26 +16,26 @@ public class ContarCantidad {
     public ContarCantidad() {
     }
 
-    public String getLoremIpsum() {
+    public static String getLoremIpsum() {
         return loremIpsum;
     }
 
-    public int contarFrases() {
+    public static int contarFrases() {
         String[] frase = getLoremIpsum().split("[!?.:]+");
         return frase.length;
     }
 
-    public int contarPalabras() {
+    public static int contarPalabras() {
         String[] palabras = getLoremIpsum().split("\\s+");
         return palabras.length;
     }
 
-    public int contarParrafos() {
+    public static int contarParrafos() {
         String[] parrafos = getLoremIpsum().split("\\n+");
         return parrafos.length;
     }
 
-    public int contarPalindromos(String palabra) {
+    public static int contarPalindromos(String palabra) {
         String palabraVacia = "";
         int contadorPalindromos = 0;
 
@@ -62,7 +62,7 @@ public class ContarCantidad {
         return contadorPalindromos;
     }
 
-    public HashMap palabrasMasRepetidas(String palabra) {
+    public static HashMap palabrasMasRepetidas(String palabra) {
         HashMap<String, Integer> palabrasRepetidas = new HashMap<String, Integer>();
         String palabraVacia = "";
 
@@ -73,10 +73,13 @@ public class ContarCantidad {
 
             if (posicionLetra != ' ') {
                 palabraVacia = palabraVacia + posicionLetra;
+
             } else {
                 String palabraLimpia = palabraVacia.replaceAll("[.,:;!?]", "");
+
                 if (palabrasRepetidas.containsKey(palabraLimpia)) {
                     palabrasRepetidas.put(palabraLimpia, 1 + 1);
+
                 } else {
                     palabrasRepetidas.putIfAbsent(palabraLimpia, 1);
                 }
