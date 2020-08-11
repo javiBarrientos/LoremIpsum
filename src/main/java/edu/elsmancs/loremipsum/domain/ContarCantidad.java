@@ -74,14 +74,14 @@ public class ContarCantidad {
             if (posicionLetra != ' ') {
                 palabraVacia = palabraVacia + posicionLetra;
             } else {
-                String quitarSignoPuntuacion = palabraVacia.replaceAll("[.,:;!?]", "");
-                if (palabrasRepetidas.containsKey(quitarSignoPuntuacion)) {
-                    palabrasRepetidas.put(quitarSignoPuntuacion, 1 + 1);
+                String palabraLimpia = palabraVacia.replaceAll("[.,:;!?]", "");
+                if (palabrasRepetidas.containsKey(palabraLimpia)) {
+                    palabrasRepetidas.put(palabraLimpia, 1 + 1);
                 } else {
-                    palabrasRepetidas.putIfAbsent(quitarSignoPuntuacion, 1);
+                    palabrasRepetidas.putIfAbsent(palabraLimpia, 1);
                 }
                 palabraVacia = "";
-                quitarSignoPuntuacion = "";
+                palabraLimpia = "";
             }
         }
         return palabrasRepetidas;
