@@ -1,7 +1,9 @@
 package edu.elsmancs.loremipsum.domain;
 
-import javax.swing.tree.MutableTreeNode;
 import java.util.*;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toMap;
 
 public class ContarCantidad {
     private static final String loremIpsum = "Lorem. ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sem felis, ornare in lectus quis, tincidunt tincidunt sapien. Suspendisse potenti. Donec sagittis eu turpis a semper. Etiam mattis, sapien eu porttitor rutrum, ante neque lobortis nulla, ut dignissim orci elit vitae diam. Praesent accumsan diam in felis ornare, vitae sollicitudin tortor feugiat. Pellentesque vel porttitor tortor. Suspendisse in ipsum id sapien suscipit vulputate.\n" +
@@ -82,13 +84,20 @@ public class ContarCantidad {
         return listaDePalabras;
     }
 
-    public static HashMap<String, Integer> palabrasMasRepetidas(ArrayList<String> lista) {
-        HashMap<String, Integer> palabrasRepetidas = new HashMap<String, Integer>();
+    public static Map<String, Integer> palabrasMasRepetidas(ArrayList<String> lista) {
+        Map<String, Integer> palabrasRepetidas = new HashMap<String, Integer>();
 
         for (String palabraDeLaLista : lista) {
             palabrasRepetidas.put(palabraDeLaLista, Collections.frequency(lista, palabraDeLaLista));
         }
-        return palabrasRepetidas;
-    }
 
+        LinkedHashMap mapaOrdenado = palabrasRepetidas.entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+                .limit(5)
+                .collect(toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2,
+                                LinkedHashMap::new));
+
+        return mapaOrdenado;
+    }
 }
