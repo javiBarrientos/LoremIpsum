@@ -1,5 +1,6 @@
 package edu.elsmancs.loremipsum.domain;
 
+import javax.swing.tree.MutableTreeNode;
 import java.util.*;
 
 public class ContarCantidad {
@@ -75,7 +76,6 @@ public class ContarCantidad {
             } else {
                 String palabraLimpia = palabraVacia.replaceAll("[.,:;!?]", "");
                 listaDePalabras.add(palabraLimpia);
-                Collections.sort(listaDePalabras);
                 palabraVacia = "";
             }
         }
@@ -83,16 +83,10 @@ public class ContarCantidad {
     }
 
     public static HashMap<String, Integer> palabrasMasRepetidas(ArrayList<String> lista) {
-        LinkedHashMap<String, Integer> palabrasRepetidas = new LinkedHashMap<String, Integer>();
+        HashMap<String, Integer> palabrasRepetidas = new HashMap<String, Integer>();
 
         for (String palabraDeLaLista : lista) {
-
-            if (palabrasRepetidas.containsKey(palabraDeLaLista)) {
-                palabrasRepetidas.put(palabraDeLaLista, 1 + 1);
-
-            } else {
-                palabrasRepetidas.putIfAbsent(palabraDeLaLista, 1);
-            }
+            palabrasRepetidas.put(palabraDeLaLista, Collections.frequency(lista, palabraDeLaLista));
         }
         return palabrasRepetidas;
     }
