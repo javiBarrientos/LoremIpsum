@@ -77,14 +77,14 @@ public class ContarCantidad {
             palabrasRepetidas.put(palabraDeLaLista, Collections.frequency(lista, palabraDeLaLista));
         }
 
-        LinkedHashMap mapaOrdenado = palabrasRepetidas.entrySet()
+        LinkedHashMap palabrasOrdenadas = palabrasRepetidas.entrySet()
                 .stream()
                 .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
                 .limit(5)
                 .collect(toMap(Map.Entry::getKey, Map.Entry::getValue, (key, value) -> value,
                                 LinkedHashMap::new));
 
-        return mapaOrdenado;
+        return palabrasOrdenadas;
     }
 
     public static Map<String, Integer> tuplasMasRepetidas(ArrayList<String> lista) {
