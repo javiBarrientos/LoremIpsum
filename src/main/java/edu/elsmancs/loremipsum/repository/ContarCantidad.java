@@ -1,4 +1,4 @@
-package edu.elsmancs.loremipsum.domain;
+package edu.elsmancs.loremipsum.repository;
 
 import java.util.*;
 

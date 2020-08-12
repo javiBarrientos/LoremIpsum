@@ -1,6 +1,6 @@
 package edu.elsmancs.loremipsum;
 
-import edu.elsmancs.loremipsum.domain.ContarCantidad;
+import edu.elsmancs.loremipsum.repository.ContarCantidad;
 
 public class Main {
     private static ContarCantidad contar;
