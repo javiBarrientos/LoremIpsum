@@ -90,13 +90,23 @@ public class ContarCantidad {
     public static Map<String, Integer> tuplasMasRepetidas(ArrayList<String> lista) {
         Map<String, Integer> tuplasRepetidas = new HashMap<String, Integer>();
 
-        String palabraClave = "";
+        String primeraPalabra = "";
+        String segundaPalabra = "";
 
         for (String palabra : lista) {
-            for (String segundaPalabra : lista) {
-                palabraClave = palabra + " " + segundaPalabra;
-                tuplasRepetidas.put(palabraClave, Collections.frequency(lista, palabraClave));
+            primeraPalabra = palabra;
+
+            if (segundaPalabra != "") {
+                String palabraFinal = segundaPalabra.concat(" ").concat(primeraPalabra);
+
+                if (tuplasRepetidas.containsKey(palabraFinal)) {
+                    tuplasRepetidas.put(palabraFinal, tuplasRepetidas.get(palabraFinal) + 1);
+
+                } else {
+                    tuplasRepetidas.put(palabraFinal, 1);
+                }
             }
+            segundaPalabra = primeraPalabra;
         }
 
         LinkedHashMap tuplasOrdenadas = tuplasRepetidas.entrySet()
